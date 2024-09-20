@@ -4,11 +4,15 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#e50914",
+      contrastText:"rgb(255,255,255)"
     },
+    
     secondary: {
       main: "rgba(128, 128, 128, 0.4)",
+      contrastText:"rgb(255,255,255)"
     },
   },
+
   components: {
     MuiButton: {
       styleOverrides: {

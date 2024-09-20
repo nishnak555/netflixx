@@ -8,7 +8,7 @@ export const Render = () => {
     <>
       <Grid2 spacing={3} container>
         <Grid2 item>
-          <CustomButton onClick={() => console.log("Button clicked!")}>
+          <CustomButton colorType = "primary" onClick={() => console.log("Button clicked!")}>
             SignIn
           </CustomButton>
         </Grid2>
@@ -19,6 +19,7 @@ export const Render = () => {
                 background: "#e50914",
               },
             }}
+            colorType = "secondary"
             endIcon={<ArrowForwardIosIcon />}
             onClick={() => console.log("Button clicked!")}
           >

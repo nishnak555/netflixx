@@ -4,18 +4,35 @@ import { buttonPropTypes, buttonDefaultProps } from "../utils/compoValidation";
 const CustomButton = (props) => {
   const theme = useTheme();
 
-  const StyledButton = styled(Button)(({ fullWidth, customstyles }) => ({
-    background: theme.palette.primary.main,
-    width: fullWidth ? "100%" : "auto",
-    ...customstyles,
-  }));
+  const StyledButton = styled(Button)(
+    ({ fullWidth, customstyles, colorType }) => ({
+      background: colorType === 'primary' 
+      ? theme.palette.primary.main
+      : colorType === 'secondary' 
+      ? theme.palette.secondary.main
+      : colorType === 'success'
+      ? theme.palette.success.main
+      : theme.palette.grey[500], 
+      color: theme.palette.getContrastText(
+        colorType === 'primary' 
+        ? theme.palette.primary.main
+        : colorType === 'secondary' 
+        ? theme.palette.secondary.main
+        : colorType === 'success'
+        ? theme.palette.success.main
+        : theme.palette.grey[500]
+      ), 
+      width: fullWidth ? "100%" : "auto",
+      ...customstyles,
+    })
+  );
   const {
     startIcon,
     endIcon,
     customstyles,
     fullWidth,
     children,
-
+    colorType,
     ...other
   } = props;
   return (
@@ -23,6 +40,7 @@ const CustomButton = (props) => {
       fullWidth={fullWidth}
       startIcon={startIcon}
       endIcon={endIcon}
+      colorType={colorType}
       {...other}
     >
       {children || "Sign In"}
