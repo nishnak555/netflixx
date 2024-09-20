@@ -24,7 +24,6 @@ export const Render = () => {
           >
             Get Started
           </CustomButton>
-        
         </Grid2>
         <Grid2 item>
           <CustomButton onClick={() => console.log("Button clicked!")}>

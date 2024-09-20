@@ -20,7 +20,20 @@ const theme = createTheme({
           fontFamily: "Netflix Sans",
           fontSize: "16px",
           borderRadius: "4px",
-      
+          padding: "8px 16px",
+
+          "@media (min-width:600px)": {
+            fontSize: "14px",
+          },
+          "@media (min-width:960px)": {
+            fontSize: "16px",
+          },
+          "@media (min-width:1280px)": {
+            fontSize: "18px",
+          },
+          "@media (max-width:600px)": {
+            padding: "6px 12px",
+          },
         },
       },
     },
