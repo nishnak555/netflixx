@@ -6,22 +6,19 @@ const CustomButton = (props) => {
 
   const StyledButton = styled(Button)(
     ({ fullWidth, customstyles, colorType }) => ({
-      background: colorType === 'primary' 
-      ? theme.palette.primary.main
-      : colorType === 'secondary' 
-      ? theme.palette.secondary.main
-      : colorType === 'success'
-      ? theme.palette.success.main
-      : theme.palette.grey[500], 
+      background:
+        colorType === "primary"
+          ? theme.palette.primary.main
+          : colorType === "secondary"
+          ? theme.palette.secondary.main
+          : theme.palette.grey[500],
       color: theme.palette.getContrastText(
-        colorType === 'primary' 
-        ? theme.palette.primary.main
-        : colorType === 'secondary' 
-        ? theme.palette.secondary.main
-        : colorType === 'success'
-        ? theme.palette.success.main
-        : theme.palette.grey[500]
-      ), 
+        colorType === "primary"
+          ? theme.palette.primary.main
+          : colorType === "secondary"
+          ? theme.palette.secondary.main
+          : theme.palette.grey[500]
+      ),
       width: fullWidth ? "100%" : "auto",
       ...customstyles,
     })
