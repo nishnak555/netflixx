@@ -4,7 +4,7 @@ import { buttonPropTypes, buttonDefaultProps } from "../utils/compoValidation";
 const CustomButton = (props) => {
   const theme = useTheme();
 
-  const StyledButton = styled(Button)(({ theme, fullWidth, customstyles }) => ({
+  const StyledButton = styled(Button)(({ fullWidth, customstyles }) => ({
     background: theme.palette.primary.main,
     width: fullWidth ? "100%" : "auto",
     ...customstyles,
@@ -19,16 +19,14 @@ const CustomButton = (props) => {
     ...other
   } = props;
   return (
-    <>
-      <StyledButton
-        fullWidth={fullWidth}
-        startIcon={startIcon}
-        endIcon={endIcon}
-        {...other}
-      >
-        {props.children || "Sign In"}
-      </StyledButton>
-    </>
+    <StyledButton
+      fullWidth={fullWidth}
+      startIcon={startIcon}
+      endIcon={endIcon}
+      {...other}
+    >
+      {children || "Sign In"}
+    </StyledButton>
   );
 };
 
