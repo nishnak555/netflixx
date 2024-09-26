@@ -1,53 +1,76 @@
 import React from "react";
+
 import {
   Box,
   FormControl,
   Select,
   IconComponent,
-  style,
+  styled,
   InputLabel,
   MenuItem,
   ListItemIcon,
-  colors,
 } from "@mui/material";
 import TranslateIcon from "@mui/icons-material/Translate";
 import BorderColor from "@mui/icons-material/BorderColor";
+import { useTheme } from "@emotion/react";
 
-const CustomSelector = ({
-  value,
-  onChange,
-  label,
-  selectedValue,
-  sx = {},
-  icon,
-  options
-}) => {
+const CustomSelector = (props) => {
+  const selectorTheme = useTheme();
 
+  const {
+    value,
+    onChange,
+    label,
+    selectedValue,
+    sx = {},
+    icon,
+    options,
+  } = props;
+
+  console.log(options, "hhhhhh")
 
   return (
-    <Box>
-      <FormControl >
+    <Box sx={{
+          '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'white', // Default border color
+          },
+          '&:hover fieldset': {
+            borderColor: 'white', // Border color on hover
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'white', // Border color when focused (clicked)
+          },
+        },
+        '& .MuiFormLabel-root.Mui-focused': {
+          color: 'white', // Label color when focused
+        },
+        
+        }}>
+      <FormControl>
         <Select
           value={selectedValue}
           onChange={(e) => onChange(e.target.value)}
           label={label}
           sx={{}}
           startAdornment={<TranslateIcon />}
-
         >
           <InputLabel>{label}</InputLabel>
 
           {options.map((option) => (
-            <MenuItem sx={{
+            <MenuItem
+              sx={{
                 borderRadius: "5px",
                 "&:hover": {
                   backgroundColor: "grey", // Grey color on hover
                 },
-              }} 
-              key={option.value} value={option.value}>
+              }}
+              key={option.value}
+              value={option.value}
+            >
               {option.label}
               <ListItemIcon>
-                {selectedValue === option.value ? <label/> : null}
+                {selectedValue === option.value ? <label /> : null}
               </ListItemIcon>
             </MenuItem>
           ))}
