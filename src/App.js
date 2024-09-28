@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { useRoutes } from "react-router-dom";
 import CustomButton from "./components/button";
+
 import ROUTES from "./utils/routes";
 import { Render } from "./components/render";
 
@@ -15,6 +14,7 @@ function App() {
       path: ROUTES.RENDER,
       element: <Render/>,
     },
+    
   ]);
   return routes;
 }

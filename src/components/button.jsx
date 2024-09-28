@@ -28,7 +28,9 @@ const CustomButton = (props) => {
     endIcon,
     customstyles,
     fullWidth,
+    onClick,
     children,
+    sx,
     colorType,
     ...other
   } = props;
@@ -36,6 +38,9 @@ const CustomButton = (props) => {
     <StyledButton
       fullWidth={fullWidth}
       startIcon={startIcon}
+      onClick={onClick}
+      sx={sx}
+      customstyles={customstyles}
       endIcon={endIcon}
       colorType={colorType}
       {...other}
