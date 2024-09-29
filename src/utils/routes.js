@@ -1,6 +1,7 @@
 const ROUTES ={
     BUTTON:"/button",
-    RENDER:"/render"
+    RENDER:"/render",
+    SELECTOR:"/Selector"
 }
 
 export default ROUTES

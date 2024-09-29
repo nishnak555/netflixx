@@ -41,7 +41,37 @@ const theme = createTheme({
         },
       },
     },
+
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          color: "white",
+          fontFamily: "Netflix Sans",
+          fontWeight: 500,
+          borderRadius: "4px",
+          alignItems: 'center',
+          width: "auto",
+          minWidth: 'auto',
+          minHeight: "16px",
+          paddingLeft: "20px",
+          marginRight: "50px",
+          gap: "8px",
+          borderColor: "white",
+          "@media (min-width:600px)": {
+            fontSize: "14px",
+          },
+          "@media (min-width:960px)": {
+            fontSize: "16px",
+          },
+          "@media (min-width:1280px)": {
+            fontSize: "18px",
+          },
+          "@media (max-width:600px)": {
+            padding: "6px 12px",
+          },
+        }
+      }
   },
-});
+}}) 
 
 export default theme;
