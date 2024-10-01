@@ -11,13 +11,13 @@ const CustomButton = (props) => {
           ? theme.palette.primary.main
           : colorType === "secondary"
           ? theme.palette.secondary.main
-          : theme.palette.grey[500],
+          : theme.palette.primary.main,
       color: theme.palette.getContrastText(
         colorType === "primary"
           ? theme.palette.primary.main
           : colorType === "secondary"
           ? theme.palette.secondary.main
-          : theme.palette.grey[500]
+          : theme.palette.primary.main
       ),
       width: fullWidth ? "100%" : "auto",
       ...customstyles,
